@@ -1,0 +1,27 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-04-22T17:37:37Z"
+  labels:
+    app: my-dep1
+  name: my-dep1
+  namespace: default
+  resourceVersion: "105758"
+  selfLink: /api/v1/namespaces/default/services/my-dep1
+  uid: 26815068-d66b-443a-b053-577a07ee8566
+spec:
+  clusterIP: 10.152.183.91
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: my-dep1
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

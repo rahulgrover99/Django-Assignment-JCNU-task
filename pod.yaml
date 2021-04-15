@@ -1,0 +1,103 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2020-04-22T17:11:12Z"
+  generateName: my-dep1-87597cd8d-
+  labels:
+    app: my-dep1
+    pod-template-hash: 87597cd8d
+  name: my-dep1-87597cd8d-l4g4h
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: my-dep1-87597cd8d
+    uid: a57b456c-f965-49de-afff-d192a627a2c7
+  resourceVersion: "121094"
+  selfLink: /api/v1/namespaces/default/pods/my-dep1-87597cd8d-l4g4h
+  uid: 290b8878-81b5-4455-9b40-40c8ae1cf11e
+spec:
+  containers:
+  - image: localhost:32000/project:registry
+    imagePullPolicy: IfNotPresent
+    name: project
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-rmjl8
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: inspi
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-rmjl8
+    secret:
+      defaultMode: 420
+      secretName: default-token-rmjl8
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-22T17:11:12Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-22T19:30:45Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-22T19:30:45Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-22T17:11:12Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://e2e09b0466050bd67570b3ae7f8c56a72462a750fa55b5dcf447a1907145e5be
+    image: localhost:32000/project:registry
+    imageID: localhost:32000/project@sha256:c2d63103747dee63d986e752fb6006f73f2b5de29a22557802fb0dfe70a0367a
+    lastState:
+      terminated:
+        containerID: containerd://89e4f5739631a0df5a5211c2737419515eedc279455872edf4629499ba0d023e
+        exitCode: 255
+        finishedAt: "2020-04-22T19:29:07Z"
+        reason: Unknown
+        startedAt: "2020-04-22T17:12:06Z"
+    name: project
+    ready: true
+    restartCount: 1
+    started: true
+    state:
+      running:
+        startedAt: "2020-04-22T19:30:43Z"
+  hostIP: 192.168.1.5
+  phase: Running
+  podIP: 10.1.92.10
+  podIPs:
+  - ip: 10.1.92.10
+  qosClass: BestEffort
+  startTime: "2020-04-22T17:11:12Z"
